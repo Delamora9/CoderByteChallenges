@@ -9,7 +9,7 @@ string LongestWord(string sen) {
   for(int i = 0; i < sen.size(); i++){
       //cout << sen[i] << " - " << (int) sen[i] << "\n";
       asciiValue = (int) sen[i];
-      if(!((asciiValue >= 97 && asciiValue <= 122) || (asciiValue >= 65 && asciiValue <= 90)) || i+1 == sen.size()){
+      if(!((asciiValue >= 97 && asciiValue <= 122) || (asciiValue >= 65 && asciiValue <= 90) || (asciiValue >= 48 && asciiValue <= 57)) || i+1 == sen.size()){
           if(i+1 == sen.size()){
               i += 1;
           }
@@ -25,17 +25,15 @@ string LongestWord(string sen) {
           lastPosition = i;
       }
   }
-  sen = longestWord;
-  // code goes here   
-  return sen; 
-            
+  sen = longestWord;  
+  return sen;        
 }
 
 int main() { 
   
   // keep this function call here
-  cout << LongestWord("fun&!! time") << "\n";
-  cout << LongestWord("I love dogs") << "\n";
+  cout << LongestWord("123456789 98765432") << "\n";
+  cout << LongestWord("a b c dee") << "\n";
   //cout << LongestWord(gets(stdin));
   return 0;
     
